@@ -9,7 +9,6 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: themeData.colorScheme.background,
       body: Container(
         padding: EdgeInsets.all(10),
         child: Column(
