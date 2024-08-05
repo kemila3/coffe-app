@@ -1,3 +1,4 @@
+import 'package:coffee_shop/pages/espressoMilkPage.dart';
 import 'package:coffee_shop/themes/textStyles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -112,56 +113,79 @@ class HomePage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Material(
-                     elevation: 3,
+                    elevation: 3,
                     color: const Color.fromARGB(179, 217, 203, 203),
                     borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      margin: EdgeInsets.all(10),
-                      // padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(179, 217, 203, 203),
-                        borderRadius: BorderRadius.circular(20)
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset("assets/images/Mask group.png"),
-                          Text("Espresso"),
-                          Text("With oat milk"),
-                          Text("\$4.20"),
-                                
-                        ],
+                    child: GestureDetector(
+                      onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MilkPage()));
+                  },
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        // padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(179, 217, 203, 203),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              "assets/images/Mask group.png",
+                              fit: BoxFit.cover,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text("Espresso"),
+                            Text("With milk"),
+                            Text("\$4.20"),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 Expanded(
                   child: Material(
-                     elevation: 3,
+                    elevation: 3,
                     color: const Color.fromARGB(179, 217, 203, 203),
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       margin: EdgeInsets.all(10),
                       // padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(179, 217, 203, 203),
-                        borderRadius: BorderRadius.circular(20)
-                      ),
+                          color: const Color.fromARGB(179, 217, 203, 203),
+                          borderRadius: BorderRadius.circular(20)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset("assets/images/Mask group2.png"),
+                          Image.asset(
+                            "assets/images/Mask group2.png",
+                            fit: BoxFit.cover,
+                          ),
                           Text("Espresso"),
                           Text("With oat milk"),
                           Text("\$4.20"),
-                                
                         ],
                       ),
                     ),
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Special For You",
+              style: TextStyle(
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             )
             // GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder: (context, index) {
             //   return Container(

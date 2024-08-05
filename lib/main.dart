@@ -1,4 +1,6 @@
 import 'package:coffee_shop/pages/bottomNavigationBar.dart';
+import 'package:coffee_shop/pages/espressoMilkPage.dart';
+import 'package:coffee_shop/pages/homePage.dart';
 import 'package:coffee_shop/pages/landingPage.dart';
 import 'package:coffee_shop/themes/themes.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // theme: themeData,
       debugShowCheckedModeBanner: false,
-      home: BottomNavigationBarPage(),
+      home: HomePage(),
     );
   }
 }
