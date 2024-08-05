@@ -1,3 +1,8 @@
+import 'package:coffee_shop/pages/cartPage.dart';
+import 'package:coffee_shop/pages/favouritePage.dart';
+import 'package:coffee_shop/pages/homePage.dart';
+import 'package:coffee_shop/pages/notificationsPage.dart';
+import 'package:coffee_shop/pages/profilePage.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarPage extends StatefulWidget {
@@ -9,6 +14,30 @@ class BottomNavigationBarPage extends StatefulWidget {
 }
 
 class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
+  var currentIndex = 0;
+  late final CartPage cartPage;
+  late final FavouritePage favouritePage;
+  late final HomePage homePage;
+  late final NotificationsPage notificationsPage;
+  late final ProfilePage profilePage;
+  late  List<Widget> pages;
+
+  @override
+  void initState() {
+    homePage = HomePage();
+    cartPage = CartPage();
+    favouritePage = FavouritePage();
+    notificationsPage = NotificationsPage();
+    profilePage = ProfilePage();
+    pages = [homePage,favouritePage,cartPage,notificationsPage,profilePage];
+    super.initState();
+  }
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +55,14 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
             topRight: Radius.circular(20.0),
           ),
           child: BottomNavigationBar(
+            currentIndex: currentIndex,
+            onTap: (int index) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
             type: BottomNavigationBarType.fixed,
+            selectedItemColor: Color.fromRGBO(150, 114, 89, 0.9),
             showSelectedLabels: false,
             showUnselectedLabels: false,
             items: <BottomNavigationBarItem>[
@@ -54,6 +90,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
           ),
         ),
       ),
+      body: pages[currentIndex],
     );
   }
 }
