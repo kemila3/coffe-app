@@ -110,14 +110,14 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Material(
-                  elevation: 3,
+                Expanded(
+                  child: Material(
+                     elevation: 3,
                     color: const Color.fromARGB(179, 217, 203, 203),
                     borderRadius: BorderRadius.circular(20),
-                  child: Expanded(
                     child: Container(
                       margin: EdgeInsets.all(10),
-                      padding: EdgeInsets.all(10),
+                      // padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(179, 217, 203, 203),
                         borderRadius: BorderRadius.circular(20)
@@ -135,14 +135,15 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Material(
-                  elevation: 3,
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Material(
+                     elevation: 3,
                     color: const Color.fromARGB(179, 217, 203, 203),
                     borderRadius: BorderRadius.circular(20),
-                  child: Expanded(
                     child: Container(
                       margin: EdgeInsets.all(10),
-                      padding: EdgeInsets.all(10),
+                      // padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(179, 217, 203, 203),
                         borderRadius: BorderRadius.circular(20)
@@ -150,7 +151,7 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset("assets/images/Mask group.png"),
+                          Image.asset("assets/images/Mask group2.png"),
                           Text("Espresso"),
                           Text("With oat milk"),
                           Text("\$4.20"),
