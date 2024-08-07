@@ -74,6 +74,7 @@ class OrderPage extends StatelessWidget {
               height: 20,
             ),
             Container(
+              padding: EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -88,16 +89,119 @@ class OrderPage extends StatelessWidget {
                     "13/2/A,",
                     style: TextStyle(
                         fontFamily: "Poppins",
-                        fontWeight: FontWeight.bold,
+                        // fontWeight: FontWeight.bold,
                         fontSize: 16),
                   ),
                   Text(
                     "Delivery Address",
                     style: TextStyle(
                         fontFamily: "Poppins",
-                        fontWeight: FontWeight.bold,
+                        // fontWeight: FontWeight.bold,
                         fontSize: 16),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(2),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black26)),
+                        child: Row(
+                          children: [
+                            Icon(Icons.edit_note),
+                            Text(
+                              "Edit access",
+                              style: TextStyle(
+                                fontFamily: "Poppins",
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(2),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black26)),
+                        child: Row(
+                          children: [
+                            Icon(Icons.note),
+                            Text(
+                              "Add Note",
+                              style: TextStyle(
+                                fontFamily: "Poppins",
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          width: 80,
+                          height: 80,
+                          "assets/images/Rectangle 24.png",
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Espresso",
+                        style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "with chocolate",
+                        style: TextStyle(
+                          fontFamily: "Poppins",
+                        ),
+                      )
+                    ],
+                  ),
+                  Spacer(),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40)
+                    ),
+                    child: Icon(
+                      Icons.remove,
+                    ),
+                  ),
+                  Text(
+                    "0",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Icon(Icons.add),
                 ],
               ),
             )
