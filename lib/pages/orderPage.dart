@@ -10,7 +10,7 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
-    int number = 0;
+  int number = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +25,7 @@ class _OrderPageState extends State<OrderPage> {
         centerTitle: true,
       ),
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.only(left: 10, right: 10),
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,18 +217,16 @@ class _OrderPageState extends State<OrderPage> {
                               onTap: () {
                                 setState(() {
                                   number--;
-                                  if(number < 0){
+                                  if (number < 0) {
                                     number = 0;
-                                  } 
+                                  }
                                 });
                               },
                               child: Container(
                                 padding: EdgeInsets.all(1),
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(40)
-                                ),
-                              
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(40)),
                                 child: Icon(
                                   Icons.remove,
                                 ),
@@ -240,18 +238,15 @@ class _OrderPageState extends State<OrderPage> {
                             ),
                             GestureDetector(
                               onTap: () {
-                               setState(() {
-                               number++;
-                                 
-                               });
+                                setState(() {
+                                  number++;
+                                });
                               },
                               child: Container(
                                 padding: EdgeInsets.all(1),
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(40)
-                                ),
-                              
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(40)),
                                 child: Icon(
                                   Icons.add,
                                 ),
@@ -264,8 +259,133 @@ class _OrderPageState extends State<OrderPage> {
                   ],
                 ),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.black26)),
+              child: Row(
+                children: [
+                  Icon(Icons.discount_rounded),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "1 Discount is Applied",
+                    style: TextStyle(
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(Icons.arrow_right)
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Payment Summary",
+              style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Price"),
+                      Text("\$ 4.53"),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Delivery Fee"),
+                      Text("\$ 1.00"),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.black38,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Total Payment"),
+                      Text("\$ 5.53"),
+                    ],
+                  ),
+                ],
+              ),
             )
           ],
+        ),
+      ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+        child: BottomAppBar(
+          height: 110,
+          color: Colors.black12,
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.filter),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                        color: Colors.black12,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(left: 10,right:10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.orange
+                          ),
+                          
+                          child: Text(
+                            "cash",
+                          ),
+                        ),
+                        SizedBox(width: 10,),
+                        Text("\$ 5.53 "),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(Icons.more_horiz),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 150),
+                decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  "Order",
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
