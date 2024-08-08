@@ -150,59 +150,75 @@ class OrderPage extends StatelessWidget {
               height: 20,
             ),
             Container(
-              child: Row(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          width: 80,
-                          height: 80,
-                          "assets/images/Rectangle 24.png",
-                          fit: BoxFit.cover,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Espresso",
-                        style: TextStyle(
-                          fontFamily: "Poppins",
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "with chocolate",
-                        style: TextStyle(
-                          fontFamily: "Poppins",
-                        ),
-                      )
-                    ],
-                  ),
-                  Spacer(),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40)
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.black45),
+              child: IntrinsicHeight(
+                child: Row(
+                  // mainAxisSize: MainAxisSize.max,
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            width: 80,
+                            height: 80,
+                            "assets/images/Rectangle 24.png",
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      ],
                     ),
-                    child: Icon(
-                      Icons.remove,
+                    SizedBox(
+                      width: 20,
                     ),
-                  ),
-                  Text(
-                    "0",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Icon(Icons.add),
-                ],
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Espresso",
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "with chocolate",
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.remove,
+                            ),
+                            Text(
+                              "0",
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            Icon(Icons.add),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             )
           ],
