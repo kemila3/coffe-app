@@ -1,8 +1,16 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
-class OrderPage extends StatelessWidget {
+class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
 
+  @override
+  State<OrderPage> createState() => _OrderPageState();
+}
+
+class _OrderPageState extends State<OrderPage> {
+    int number = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,17 +210,53 @@ class OrderPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(
-                              Icons.remove,
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  number--;
+                                  if(number < 0){
+                                    number = 0;
+                                  } 
+                                });
+                              },
+                              child: Container(
+                                padding: EdgeInsets.all(1),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(40)
+                                ),
+                              
+                                child: Icon(
+                                  Icons.remove,
+                                ),
+                              ),
                             ),
                             Text(
-                              "0",
+                              number.toString(),
                               style: TextStyle(fontSize: 20),
                             ),
-                            Icon(Icons.add),
+                            GestureDetector(
+                              onTap: () {
+                               setState(() {
+                               number++;
+                                 
+                               });
+                              },
+                              child: Container(
+                                padding: EdgeInsets.all(1),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(40)
+                                ),
+                              
+                                child: Icon(
+                                  Icons.add,
+                                ),
+                              ),
+                            ),
                           ],
                         )
                       ],
