@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // theme: themeData,
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LandingPage(),
     );
   }
 }
