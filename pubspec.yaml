@@ -38,6 +38,7 @@ dependencies:
   flutter_bloc:
   bloc:
   fluttertoast: ^8.2.6
+  cached_network_image: ^3.4.0
 
 dev_dependencies:
   flutter_test:
