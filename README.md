@@ -17,6 +17,14 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Screenshots are attached below
 
- - landing Page
- - <img src = "assets/screenshots/Screenshot_1723305323.png" width="200" height="400">
- 
+- landing Page
+- <img src = "assets/screenshots/Screenshot_1723305323.png" width="200" height="400">
+
+- home Page
+- <img src = "assets/screenshots/Screenshot_1723305759.png" width="200" height="400">
+
+- product Page
+- <img src = "assets/screenshots/Screenshot_1723305764.png" width="200" height="400">
+
+- order Page
+- <img src = "assets/screenshots/Screenshot_1723305766.png" width="200" height="400">
