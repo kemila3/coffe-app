@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:coffee_shop/data/coffee_items_data.dart';
 import 'package:coffee_shop/pages/espressoMilkPage.dart';
 import 'package:coffee_shop/themes/textStyles.dart';
@@ -161,8 +162,8 @@ class HomePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.network(
-                    CoffeeDataClass.coffeeData[index]["imageUrl"],
+                  CachedNetworkImage(
+                    imageUrl: CoffeeDataClass.coffeeData[index]["imageUrl"],
                     fit: BoxFit.fitWidth,
                     height: 100,
                   ),
