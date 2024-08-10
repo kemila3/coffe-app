@@ -4,11 +4,10 @@ import 'package:coffee_shop/themes/textStyles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-
-  List<Map<String, dynamic>> coffeItems = [];
 
   @override
   Widget build(BuildContext context) {
@@ -137,7 +136,7 @@ class HomePage extends StatelessWidget {
   Widget gridViewCoffees() {
     return GridView.builder(
       shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 5,
         crossAxisSpacing: 5,
@@ -170,9 +169,36 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Text(CoffeeDataClass.coffeeData[index]["name"]),
-                  Text(CoffeeDataClass.coffeeData[index]["description"], overflow: TextOverflow.ellipsis,),
-                  Text("\$ " + CoffeeDataClass.coffeeData[index]["price"]),
+                  Text(
+                    CoffeeDataClass.coffeeData[index]["name"],
+                    style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ),
+                  GestureDetector(
+                      onTap: () {
+                        Fluttertoast.showToast(
+                            msg: CoffeeDataClass.coffeeData[index]
+                                ["description"],
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.CENTER,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.green,
+                            textColor: Colors.black,
+                            fontSize: 16.0);
+                      },
+                      child: Text(
+                        CoffeeDataClass.coffeeData[index]["description"],
+                        overflow: TextOverflow.ellipsis,
+                      )),
+                  Text(
+                    "\$ " + CoffeeDataClass.coffeeData[index]["price"],
+                    style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ),
                 ],
               ),
             ),
